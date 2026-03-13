@@ -3,8 +3,8 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int score        = 0;
-    private int combo       = 0;
+    public int score = 0;
+    private int combo = 0;
     private int totalSorted = 0;
 
     public TextMeshProUGUI comboPopup;
@@ -21,7 +21,6 @@ public class ScoreManager : MonoBehaviour
 
     public void DebrisSorted(bool correct)
     {
-        Debug.Log("DebrisSorted called, correct: " + correct);
         if (correct)
         {
             combo++;
@@ -30,30 +29,22 @@ public class ScoreManager : MonoBehaviour
             ShowPopup();
 
             var lm = FindFirstObjectByType<LevelManager>();
-            Debug.Log("LevelManager found: " + (lm != null));
-            lm.OnCorrectSort();
+            if (lm != null) lm.OnCorrectSort();
+            else Debug.LogWarning("LevelManager not found!");
         }
         else
         {
             combo = 0;
         }
-        FindFirstObjectByType<UIManager>().UpdateScore(score);
-    }
-
-    public void EnemyZapped()
-    {
-        score += 250;
-        combo++;
-        ShowPopup();
-        FindFirstObjectByType<UIManager>().UpdateScore(score);
+        FindFirstObjectByType<UIManager>()?.UpdateScore(score);
     }
 
     void ShowPopup()
     {
         if (comboPopup == null) return;
         string msg = combo >= 10 ? "TUNE UP! x" + combo
-                   : combo >=  5 ? "ON FIRE! x" + combo
-                   : combo >=  3 ? "NICE x" + combo
+                   : combo >= 5 ? "ON FIRE! x" + combo
+                   : combo >= 3 ? "NICE x" + combo
                    : "";
         if (msg == "") return;
         comboPopup.text = msg;
