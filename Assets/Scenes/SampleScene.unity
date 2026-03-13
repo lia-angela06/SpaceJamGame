@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914a41b809c151141b3795b8c8f808a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SortingBin
-  acceptedType: 0
+  acceptedType: 1
   binRadius: 1.2
   binLabel: {fileID: 0}
 --- !u!61 &632339148
@@ -1315,7 +1315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914a41b809c151141b3795b8c8f808a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SortingBin
-  acceptedType: 0
+  acceptedType: 3
   binRadius: 1.2
   binLabel: {fileID: 0}
 --- !u!61 &723592058
@@ -1743,7 +1743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914a41b809c151141b3795b8c8f808a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SortingBin
-  acceptedType: 0
+  acceptedType: 2
   binRadius: 1.2
   binLabel: {fileID: 0}
 --- !u!61 &973661177
