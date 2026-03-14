@@ -73,4 +73,12 @@ public class SortingBin : MonoBehaviour
         if (sr) sr.color = idleColor;
         isHighlighted = false;
     }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0f, 1f, 0f, 0.3f);
+        Gizmos.DrawSphere(transform.position, binRadius);
+        Gizmos.color = new Color(0f, 1f, 0f, 0.8f);
+        Gizmos.DrawWireSphere(transform.position, binRadius);
+    }
 }

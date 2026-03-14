@@ -9,7 +9,7 @@ public class CourtBackground : MonoBehaviour
 
     void Update()
     {
-        var gm = FindObjectOfType<GameManager>();
+        var gm = FindFirstObjectByType<GameManager>();
         if (gm == null || gm.courtDamage == lastDamage) return;
         lastDamage = gm.courtDamage;
         for (int i = 0; i < crackObjects.Length; i++)
